@@ -1,2 +1,4 @@
-# java-core
-Java core simple exercises 
+# Java Core Exercises  
+Java core simple exercises
+
+JDK 8
