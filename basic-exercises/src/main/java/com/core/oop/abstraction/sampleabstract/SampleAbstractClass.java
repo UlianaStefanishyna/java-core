@@ -4,6 +4,8 @@ import static java.lang.System.*;
 
 public abstract class SampleAbstractClass {
 
+    String str;
+
     protected abstract void sampleProtectedAbstractMethod();
 
     static void sampleStaticMethodWithImplementation() {
