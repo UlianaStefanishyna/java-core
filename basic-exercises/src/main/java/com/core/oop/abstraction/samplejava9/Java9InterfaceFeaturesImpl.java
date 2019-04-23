@@ -1,4 +1,4 @@
-package com.core.oop.abstraction.sample;
+package com.core.oop.abstraction.samplejava9;
 
 public class Java9InterfaceFeaturesImpl implements Java9InterfaceFeatures {
 

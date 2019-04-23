@@ -1,4 +1,4 @@
-package com.core.oop.abstraction;
+package com.core.oop.abstraction.sampleabstract;
 
 import static java.lang.System.*;
 
@@ -10,8 +10,12 @@ public abstract class SampleAbstractClass {
         out.println("abstract method can have static non-abstract method with implementation with any of accessibility");
     }
 
-    private void sampleNonAbstractMethod() {
+    private void samplePrivateNonAbstractMethod() {
         out.println("non-abstract method");
+    }
+
+    void sampleNonAbstractMethod() {
+        samplePrivateNonAbstractMethod();
     }
 
     /**

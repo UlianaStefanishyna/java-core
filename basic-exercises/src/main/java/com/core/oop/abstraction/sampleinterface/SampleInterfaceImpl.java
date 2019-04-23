@@ -1,4 +1,4 @@
-package com.core.oop.abstraction;
+package com.core.oop.abstraction.sampleinterface;
 
 public class SampleInterfaceImpl implements SampleInterface {
     @Override
