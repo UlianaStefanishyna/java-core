@@ -1,6 +1,6 @@
-package com.core.patterns.abstractfactory.concreteproductimpl;
+package com.core.patterns.creational.abstractfactory.concreteproductimpl;
 
-import com.core.patterns.abstractfactory.abstractproduct.Sofa;
+import com.core.patterns.creational.abstractfactory.abstractproduct.Sofa;
 
 public class VictorianSofaImpl implements Sofa {
 

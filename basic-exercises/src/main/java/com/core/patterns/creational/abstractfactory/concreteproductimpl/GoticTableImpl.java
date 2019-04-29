@@ -1,6 +1,6 @@
-package com.core.patterns.abstractfactory.concreteproductimpl;
+package com.core.patterns.creational.abstractfactory.concreteproductimpl;
 
-import com.core.patterns.abstractfactory.abstractproduct.Table;
+import com.core.patterns.creational.abstractfactory.abstractproduct.Table;
 
 public class GoticTableImpl implements Table {
 

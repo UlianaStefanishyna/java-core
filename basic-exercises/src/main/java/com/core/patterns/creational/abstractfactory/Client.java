@@ -1,7 +1,7 @@
-package com.core.patterns.abstractfactory;
+package com.core.patterns.creational.abstractfactory;
 
-import com.core.patterns.abstractfactory.concretefactory.GoticFactory;
-import com.core.patterns.abstractfactory.concretefactory.VictorianFactory;
+import com.core.patterns.creational.abstractfactory.concretefactory.GoticFactory;
+import com.core.patterns.creational.abstractfactory.concretefactory.VictorianFactory;
 
 public class Client {
 

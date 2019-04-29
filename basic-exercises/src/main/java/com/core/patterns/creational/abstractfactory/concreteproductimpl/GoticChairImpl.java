@@ -1,6 +1,6 @@
-package com.core.patterns.abstractfactory.concreteproductimpl;
+package com.core.patterns.creational.abstractfactory.concreteproductimpl;
 
-import com.core.patterns.abstractfactory.abstractproduct.Chair;
+import com.core.patterns.creational.abstractfactory.abstractproduct.Chair;
 
 public class GoticChairImpl implements Chair {
     @Override
