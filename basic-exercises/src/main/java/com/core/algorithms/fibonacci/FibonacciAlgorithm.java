@@ -28,7 +28,8 @@ public class FibonacciAlgorithm {
     }
 
     public int fibonacciRecursion(int n) {
-        if (n < 2) return n;
+        if (n < 2)
+            return n;
         return fibonacciRecursion(n - 1) + fibonacciRecursion(n - 2);
     }
 }
