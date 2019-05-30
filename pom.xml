@@ -11,6 +11,10 @@
 
     <modules>
         <module>basic-exercises</module>
+        <module>solid-patterns-exercises</module>
+        <module>algorithms-exercises</module>
+        <module>concurrency-exercises</module>
+        <module>net-exercises</module>
     </modules>
 
     <properties>

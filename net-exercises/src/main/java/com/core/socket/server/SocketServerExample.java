@@ -1,4 +1,4 @@
-package com.socket.server;
+package com.core.socket.server;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
