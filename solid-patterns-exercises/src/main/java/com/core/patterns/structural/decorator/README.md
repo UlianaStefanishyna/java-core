@@ -11,7 +11,7 @@
 * Decorator design patterns are most often used for applying *single responsibility principles* since we divide the functionality into classes with unique areas of concern.
 
 #
-# <img src="https://raw.githubusercontent.com/UlianaStefanishyna/attachments-recource/master/image/Decorator_structure.png" height="400" width="1000" align="middle"/>
+# <img src="https://raw.githubusercontent.com/UlianaStefanishyna/attachments-recource/master/image/Decorator_structure.png" height="400" width="600" align="middle"/>
 ## Example
 # <img src="https://raw.githubusercontent.com/UlianaStefanishyna/attachments-recource/master/image/Decorator.png" height="500" width="500" align="middle"/>
 

@@ -1,4 +1,4 @@
 # Java Core Exercises  
 Java core simple exercises
 
-JDK 8
+JDK 11
