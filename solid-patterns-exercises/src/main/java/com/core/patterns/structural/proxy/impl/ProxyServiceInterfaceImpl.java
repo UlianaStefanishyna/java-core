@@ -1,4 +1,6 @@
-package com.core.patterns.structural.proxy;
+package com.core.patterns.structural.proxy.impl;
+
+import com.core.patterns.structural.proxy.ServiceInterface;
 
 public class ProxyServiceInterfaceImpl implements ServiceInterface {
 
@@ -10,7 +12,7 @@ public class ProxyServiceInterfaceImpl implements ServiceInterface {
 
     @Override
     public void operation() {
-        System.out.println("proxy method");
+        System.out.println("proxy method invoked first");
         if (checkAccess()) {
             this.serviceInterface.operation();
         }
