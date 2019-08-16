@@ -1,5 +1,8 @@
 package com.core.algorithms.leetcode.easy;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class TwoElementsSum {
     /**
      * @param nums   unsorted array of integers
@@ -14,6 +17,19 @@ public class TwoElementsSum {
      *                                  stored in the hash table, which stores exactly n elements.
      */
     public int[] twoSumUsingTwoPassHashTable(int[] nums, int target) {
+
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            map.put(nums[i], i);
+        }
+        for (int i = 0; i < nums.length; i++) {
+            int foundValue = target - nums[i];
+
+            Integer foundIndex = map.get(foundValue);
+            if (foundIndex != null && i != foundIndex) {
+                return new int[]{i, foundIndex};
+            }
+        }
         throw new IllegalArgumentException("There are no such elements that satisfy the condition");
     }
 
@@ -30,6 +46,15 @@ public class TwoElementsSum {
      *                                  stored in the hash table, which stores at most n elements.
      */
     public int[] twoSumUsingOnePassHashTable(int[] nums, int target) {
+        Map<Integer, Integer> map = new HashMap<>();
+
+        for (int i = 0; i < nums.length; i++) {
+            int foundValue = target - nums[i];
+            if (map.containsKey(foundValue)) {
+                return new int[]{map.get(foundValue), i};
+            }
+            map.put(nums[i], i);
+        }
         throw new IllegalArgumentException("There are no such elements that satisfy the condition");
     }
 
@@ -46,6 +71,19 @@ public class TwoElementsSum {
      *                                  we can use pointers
      */
     public int[] twoSumInSortedArrayUsingTwoPointers(int[] nums, int target) {
+        int fistPointer = 0;
+        int lastPointer = nums.length - 1;
+
+        while (fistPointer < lastPointer) {
+            int value = nums[fistPointer] + nums[lastPointer];
+            if (value == target) {
+                return new int[]{fistPointer, lastPointer};
+            } else if (value < target) {
+                ++fistPointer;
+            } else {
+                --lastPointer;
+            }
+        }
         throw new IllegalArgumentException("There are no such elements that satisfy the condition");
     }
 }
