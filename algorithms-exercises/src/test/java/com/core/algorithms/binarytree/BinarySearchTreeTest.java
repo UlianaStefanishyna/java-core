@@ -1,25 +1,22 @@
 package com.core.algorithms.binarytree;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-@RunWith(JUnit4.class)
-public class BinarySearchTreeTest {
+class BinarySearchTreeTest {
 
     @Test
-    public void testCreateBST() {
+    void testCreateBST() {
         BinarySearchTree bst = new RecursiveBinarySearchTree();
     }
 
     @Test
-    public void testInsertIntoEmptyTree() {
+    void testInsertIntoEmptyTree() {
         BinarySearchTree bst = new RecursiveBinarySearchTree();
 
         boolean inserted = bst.insert(35);
@@ -28,7 +25,7 @@ public class BinarySearchTreeTest {
     }
 
     @Test
-    public void testInsertTestElementTwice() {
+    void testInsertTestElementTwice() {
         BinarySearchTree bst = new RecursiveBinarySearchTree();
 
         bst.insert(43);
@@ -38,7 +35,7 @@ public class BinarySearchTreeTest {
     }
 
     @Test
-    public void testInsertElements() {
+    void testInsertElements() {
         BinarySearchTree<Integer> bst = RecursiveBinarySearchTree.of(23, 65, 7);
 
         boolean insertedNew = bst.insert(77);
@@ -51,12 +48,10 @@ public class BinarySearchTreeTest {
     }
 
     @Test
-    public void testInOrderTraversal() {
+    void testInOrderTraversal() {
         BinarySearchTree<Integer> bst = RecursiveBinarySearchTree.of(23, 65, 7, 100);
 
         List<Integer> bstElements = new ArrayList<>();
         bst.inOrderTraversal(bstElements::add);
-
-//        assertThat(bstElements, );
     }
 }

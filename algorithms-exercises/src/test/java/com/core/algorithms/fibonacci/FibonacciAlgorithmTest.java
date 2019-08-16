@@ -1,34 +1,22 @@
 package com.core.algorithms.fibonacci;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class FibonacciAlgorithmTest {
+class FibonacciAlgorithmTest {
 
-    private FibonacciAlgorithm fibonacci;
-
-    @Before
-    public void init() {
-        this.fibonacci = new FibonacciAlgorithm();
-    }
+    private FibonacciAlgorithm fibonacci = new FibonacciAlgorithm();
 
     @Test
-    public void test_MyFibonacciIteration() {
+    void test_MyFibonacciIteration() {
         int actualResult = this.fibonacci.myFibonacciIteration(11);
         assertEquals(89, actualResult);
     }
 
     @Test
-    public void test_MyFibonacciRecursion() {
+    void test_MyFibonacciRecursion() {
         int actualResult = this.fibonacci.myFibonacciRecursion(1, 1, 11, 3);
         assertEquals(89, actualResult);
-    }
-
-    @Test
-    public void test_FibonacciRecursion() {
-        int actualResult = this.fibonacci.fibonacciRecursion(6);
-//        assertEquals(89, actualResult);
     }
 }
