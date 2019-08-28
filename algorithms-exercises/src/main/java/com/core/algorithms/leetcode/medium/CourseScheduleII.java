@@ -4,7 +4,7 @@ import java.util.*;
 
 /**
  * @author uliana
- *
+ * <p>
  * See the task: <a href="leetcode">https://leetcode.com/problems/course-schedule-ii/</a>
  */
 
@@ -43,7 +43,7 @@ public class CourseScheduleII {
         this.color.put(node, GRAY);
 
         // Traverse on neighboring vertices
-        for (Integer neighbor : this.adjList.getOrDefault(node, new ArrayList<Integer>())) {
+        for (Integer neighbor : this.adjList.getOrDefault(node, new ArrayList<>())) {
             if (this.color.get(neighbor) == WHITE) {
                 this.dfs(neighbor);
             } else if (this.color.get(neighbor) == GRAY) {
@@ -65,7 +65,7 @@ public class CourseScheduleII {
         for (int i = 0; i < prerequisites.length; i++) {
             int dest = prerequisites[i][0];
             int src = prerequisites[i][1];
-            List<Integer> lst = adjList.getOrDefault(src, new ArrayList<Integer>());
+            List<Integer> lst = adjList.getOrDefault(src, new ArrayList<>());
             lst.add(dest);
             adjList.put(src, lst);
         }
@@ -90,11 +90,63 @@ public class CourseScheduleII {
         return order;
     }
 
+    public int[] findOrderDependent(int numCourses, int[][] prerequisites) {
+
+        Map<Integer, List<Integer>> neighbors = new HashMap<>();
+        int[] dependent = new int[numCourses];
+        int[] topologicalOrder = new int[numCourses];
+
+
+        for (int i = 0; i < prerequisites.length; i++) {
+            int src = prerequisites[i][1];
+            int dst = prerequisites[i][0];
+            List<Integer> neig = neighbors.getOrDefault(src, new ArrayList<>());
+            neig.add(dst);
+            neighbors.put(i, neig);
+
+            dependent[dst] += 1;
+        }
+
+        Queue<Integer> queue = new LinkedList<>();
+
+        for (int i = 0; i < numCourses; i++) {
+            if (dependent[i] == 0) {
+                queue.add(i);
+            }
+        }
+
+        int index = 0;
+        while (!queue.isEmpty()) {
+            int node = queue.remove();
+            topologicalOrder[index++] = node;
+
+            if (neighbors.containsKey(node)) {
+                List<Integer> lst = neighbors.get(node);
+                for (Integer i : lst) {
+                    --dependent[i];
+                    if (dependent[i] == 0) {
+                        queue.add(i);
+                    }
+                }
+            }
+        }
+        if (index == numCourses)
+            return topologicalOrder;
+        else
+            return new int[0];
+    }
+
     // TODO: 8/27/19 WRITE TESTS INSTEAD OF main() method
     public static void main(String[] args) {
 //        int[][] ints = {{1, 0}};
-        int[][] ints = {{1, 0}, {2, 0}, {3,1}, {3,2}};
-        int[] order = new CourseScheduleII().findOrder(4, ints);
-        System.out.println(Arrays.toString(order));
+        int[][] ints = {{1, 0}, {2, 0}, {3, 1}, {3, 2}};
+//        int[] order = new CourseScheduleII().findOrder(4, ints);
+//        System.out.println(Arrays.toString(order));
+
+        int[] ss = new int[2];
+        int i = 0;
+        ss[i++] = 5;
+        System.out.println(Arrays.toString(ss));
+        System.out.println(i);
     }
 }
