@@ -140,8 +140,8 @@ public class CourseScheduleII {
     public static void main(String[] args) {
 //        int[][] ints = {{1, 0}};
         int[][] ints = {{1, 0}, {2, 0}, {3, 1}, {3, 2}};
-//        int[] order = new CourseScheduleII().findOrder(4, ints);
-//        System.out.println(Arrays.toString(order));
+        int[] order = new CourseScheduleII().findOrder(4, ints);
+        System.out.println(Arrays.toString(order));
 
         int[] ss = new int[2];
         int i = 0;
